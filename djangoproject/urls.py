@@ -15,7 +15,19 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.conf.urls import url,include
+from mysite import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    url(r'^$',views.index),
+    url(r'^poll/(\d+)$',views.poll,name='poll-url'),
+    url(r'^vote/(\d+)/(\d+)$',views.vote,name='vote-url'),
+    # url(r'^addpoll/$',views.index),
+    # url(r'^delpoll/$',views.index),
+    # url(r'^addpollitem/$',views.index),
+    # url(r'^delpollitem/$',views.index),
+
+    url(r'^accounts/',include('allauth.urls')),
+
 ]
