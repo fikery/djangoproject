@@ -23,6 +23,7 @@ urlpatterns = [
     url(r'^$',views.index),
     url(r'^poll/(\d+)$',views.poll,name='poll-url'),
     url(r'^vote/(\d+)/(\d+)$',views.vote,name='vote-url'),
+    url(r'^govote/$',views.govote),
     # url(r'^addpoll/$',views.index),
     # url(r'^delpoll/$',views.index),
     # url(r'^addpollitem/$',views.index),

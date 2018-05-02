@@ -10,13 +10,17 @@
         <ul class="nav navbar-nav">
             <li class="active"><a href="/">主页</a> </li>
             {% if user.is_authenticated %}
+            <li><a href="/addpoll/">新增/编辑投票</a> </li>
             <li><a href="{% url 'account_logout'%}">注销</a> </li>
+            <li><a href="{% url 'account_reset_password' %}">重置密码</a> </li>
             <li><a href="{% url 'account_email' %}">变更邮箱</a> </li>
             {% else%}
             <li><a href="{% url 'account_login'%}">登录</a> </li>
             <li><a href="{% url 'account_signup'%}">注册</a> </li>
             {% endif %}
             <li><a href="/admin">管理</a> </li>
+            <!--<li><a href="/info/">{{ user.username }}</a> </li>-->
+            <img src="{{ user.socialaccount_set.all.0.get_avatar_url }}" align="right" width="40">
         </ul>
     </div>
 </nav>

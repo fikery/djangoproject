@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'allauth.socialaccount.providers.facebook',
     'allauth.socialaccount.providers.weibo',
+    'allauth.socialaccount.providers.github',
 ]
 SITE_ID=1
 LOGIN_REDIRECT_URL='/'
@@ -133,3 +134,14 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+#SMTP服务器
+EMAIL_HOST='smtp.sendcloud.net'
+EMAIL_HOST_USER=''
+EMAIL_HOST_PASSWORD=''
+EMAIL_PORT=25
+#是否使用SSL或者TLS
+# EMAIL_USE_SSL=True
+# EMAIL_USE_TLS=True
+#默认发件人
+# DEFAULT_FROM_EMAIL='liuyongbin0011@gmail.com'
